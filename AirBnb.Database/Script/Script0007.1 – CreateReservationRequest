@@ -1,0 +1,13 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'CreateReservationRequest')
+DROP PROCEDURE [dbo].[CreateReservationRequest]
+GO
+CREATE PROCEDURE [dbo].[CreateReservationRequest]
+    @id UNIQUEIDENTIFIER,
+    @rentalId UNIQUEIDENTIFIER,
+    @email VARCHAR(50),
+    @checkIn DATETIME,
+    @checkOut DATETIME,
+    @message VARCHAR(8000)
+AS
+    INSERT INTO ReservationRequest(id, rentalId, renterId, checkIn, checkOut, message)
+    VALUES (@id, @rentalId, (SELECT u.id FROM AirBnbUser u WHERE u.email = @email) , @checkIn, @checkOut, @message)

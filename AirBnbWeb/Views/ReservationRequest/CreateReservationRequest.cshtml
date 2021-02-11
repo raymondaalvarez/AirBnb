@@ -1,0 +1,14 @@
+﻿@model AirBnb.Entities.ReservationRequest;
+@{
+    var email = Model.email;
+    var checkIn = Model.checkIn;
+    var checkOut = Model.checkOut;
+    var message = Model.message;
+}
+    <div class="content">
+        <p>Thank you for subbmitting your reservation request, here are the results you inputed</p>
+        <p>Email: @email</p>
+        <p>Check in date: @checkIn</p>
+        <p>Check out date: @checkOut</p>
+        <p>Message to host: @message</p>
+    </div>

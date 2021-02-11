@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "AirBnb.Business/1.0.0": {
+        "dependencies": {
+          "AirBnb.Business.Interfaces": "1.0.0",
+          "AirBnb.Entities": "1.0.0",
+          "AirBnb.Repository.Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "AirBnb.Business.dll": {}
+        }
+      },
+      "AirBnb.Business.Interfaces/1.0.0": {
+        "dependencies": {
+          "AirBnb.Entities": "1.0.0"
+        },
+        "runtime": {
+          "AirBnb.Business.Interfaces.dll": {}
+        }
+      },
+      "AirBnb.Entities/1.0.0": {
+        "runtime": {
+          "AirBnb.Entities.dll": {}
+        }
+      },
+      "AirBnb.Repository.Interfaces/1.0.0": {
+        "dependencies": {
+          "AirBnb.Entities": "1.0.0"
+        },
+        "runtime": {
+          "AirBnb.Repository.Interfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AirBnb.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AirBnb.Business.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AirBnb.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AirBnb.Repository.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

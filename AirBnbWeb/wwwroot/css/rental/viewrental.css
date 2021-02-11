@@ -1,0 +1,16 @@
+﻿/*
+    Date range picker css edits for colors
+*/
+.daterangepicker td.active{
+    background-color: #f2004f;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #f2004f;
+    border-color: #f2004f;
+}
+
+/*
+
+*/

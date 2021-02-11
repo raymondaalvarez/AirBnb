@@ -1,0 +1,53 @@
+﻿<a id="signup" class="button modal-button has-text-white-bis has-background-danger" data-target="modal-signup" onclick="DisplaySignupModal()">
+    <strong>Sign up</strong>
+</a>
+<!-- Signup modal -->
+<div class="modal" id="modal-signup" method="post">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Sign Up</p>
+            <button class="delete" aria-label="close" onclick="RemoveSignupModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <form method="post" asp-controller="Home" asp-action="ProcessSignupForm">
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input id="email-input" name="email" class="input" type="email" placeholder="Email input" onchange="IsValidEmail(this)">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i id="signup-warning-icon" class="fas"></i>
+                        </span>
+                    </div>
+                    <p id="signup-email-validator-help" class="help"></p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="password1" class="input" type="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="password2" name="password" onchange="PasswordsMatch(this)" class="input" type="password" placeholder="Retype Password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    <p id="signup-password-validator-help" class="help"></p>
+                </div>
+
+                <footer class="modal-card-foot">
+                    <button class="button is-danger" type="submit">Sign up</button>
+                </footer>
+            </form>
+        </section>
+
+    </div>
+</div>

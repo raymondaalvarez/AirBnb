@@ -1,0 +1,7 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'GetUserByEmail')
+DROP PROCEDURE [dbo].[GetUserByEmail]
+GO
+CREATE PROCEDURE [dbo].[GetUserByEmail]
+    @email VARCHAR(50)
+AS
+    SELECT * FROM AirBnbUser WHERE email = @email;

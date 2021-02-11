@@ -1,0 +1,7 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'GetAllAccountDetails')
+DROP PROCEDURE [dbo].[GetAllAccountDetails]
+GO
+CREATE PROCEDURE [dbo].[GetAllAccountDetails]
+AS
+
+    SELECT * FROM Account;

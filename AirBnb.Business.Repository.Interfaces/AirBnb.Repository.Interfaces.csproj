@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AirBnb.Entities\AirBnb.Entities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IRepositories\" />
+  </ItemGroup>
+</Project>

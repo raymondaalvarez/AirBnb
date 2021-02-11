@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "About Us";
+}
+<h1>@ViewData["Title"]</h1>
+<h2>@Model.CompanyName</h2>
+<h4>@Model.MissionStatement</h4>
+
+<p>Are you a home owner? Want to make some extra side cash? Rent out their home or a room to someone!</p>
+<p>Are you looking for somewhere to stay on your trip? Need a house? A bedroom? Need ammenities? Rent out someone's home or a room through our application!</p>
+<h4>We have been around since @Model.StartDate</h4>
+<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact</a>

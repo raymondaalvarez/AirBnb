@@ -1,0 +1,15 @@
+@model AirBnb.Models.ContactUsViewModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    First Name: <input type="text" name="firstName" value=""/> <br />
+    Last Name: <input type="text" name="lastName" value=""/> <br />
+    Email Address: <input type="text" name="email" value=""/> <br />
+    <input type="submit" value="Submit" />
+</form>
+
+Thank you for submitting your form @Model.firstName,
+we will send an email to @Model.email

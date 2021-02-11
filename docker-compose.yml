@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  airbnbweb:
+    image: ${DOCKER_REGISTRY-}airbnbweb
+    build:
+      context: .
+      dockerfile: AirBnbWeb/Dockerfile

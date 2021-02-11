@@ -1,0 +1,28 @@
+﻿@model AirBnb.Entities.Rental
+<section class='hero'> <div class='hero-body'> <div class='container is-fluid'> <h1 class="is-size-1">@Model?.title</h1> </div> </div> </section>
+<section class='section'>
+    <div class='container is-fluid'>
+        <div class='columns'>
+            <div class='column is-three-fifths'>
+                <figure class='image is-4by3'>
+                    <img src='https://www.finardproperties.com/sites/default/files/blogpost-1.jpg' alt='placeholder image'>
+                </figure>
+            </div>
+            <div class='column is-two-fifths'>
+                <div class='content'>
+                    <h3 class="is-size-3">Stay Details</h3>
+                    <p>@Model?.description</p>
+                    <p><strong>Bedrooms </strong>@Model?.bedrooms</p>
+                    <p><strong>Bathrooms </strong>@Model?.bathrooms</p>
+                    <p><strong>Price $</strong>@Model.rentalFee</p>
+                </div>
+                <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-danger is-half" data-target="modal-reservation-request" onclick="DisplayReservationRequestModal()">Request a stay!</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <partial name="_PartialReservationRequest" model=@Model />
+</section>

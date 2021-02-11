@@ -1,0 +1,68 @@
+﻿@model AirBnb.Entities.Rental
+@{
+    var startDate = DateTime.Today.ToShortDateString();
+    var endDate = DateTime.Today.AddDays(3.0).ToShortDateString();
+    var rentalId = Model.id;
+}
+<div class="modal" id="modal-reservation-request" method="post">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Reservation Request</p>
+            <button class="delete" aria-label="close" onclick="RemoveReservationRequestModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <form method="post" asp-controller="ReservationRequest" asp-action="CreateReservationRequest" id="ReservationRequestForm">
+                <input class="field" type="hidden" name="rentalId" value="@rentalId"></input>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input id="email-input-reservation-request" name="email" class="input" type="email" placeholder="Email" onchange="IsValidEmailReservationRequest(this)">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i id="reservation-request-warning-icon" class="fas"></i>
+                        </span>
+                    </div>
+                    <p id="reservation-request-email-validator-help" class="help"></p>
+                </div>
+
+                <div class="field">
+                    <label class="label">Message To Host</label>
+                    <div class="control">
+                        <textarea class="textarea" name="message" placeholder="Textarea" value=""></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                    </div>
+                </div>
+
+                <div class='field' id="daterange-container">
+                    <div class="control is-full">
+                        <input class="input is-danger is-medium has-text-centered" type="text" name="checkIn" value="@startDate" onmouseover="OpenStartDateRange()" />
+                    </div>
+                    <div class="control is-full">
+                        <input class="input is-danger is-medium has-text-centered" type="text" name="checkOut" value="@endDate" onmouseover="OpenEndDateRange()" />
+                    </div>
+
+                </div>
+
+                <footer class="modal-card-foot">
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-danger" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </footer>
+            </form>
+        </section>
+
+    </div>
+</div>

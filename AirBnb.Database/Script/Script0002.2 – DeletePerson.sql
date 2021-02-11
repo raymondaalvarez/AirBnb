@@ -1,0 +1,7 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'DeletePerson')
+DROP PROCEDURE [dbo].[DeletePerson]
+GO
+CREATE PROCEDURE [dbo].[DeletePerson]
+    @id UNIQUEIDENTIFIER
+AS
+    UPDATE AirBnbUser SET isActive = 0 WHERE id = @id;

@@ -1,0 +1,8 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'AuthenticateUser')
+DROP PROCEDURE [dbo].[AuthenticateUser]
+GO
+CREATE PROCEDURE [dbo].[AuthenticateUser]
+    @email VARCHAR(50),
+    @hashpassword VARCHAR(128)
+AS
+    SELECT COUNT(*) FROM AirBnbUser WHERE email = @email and pword = @hashpassword

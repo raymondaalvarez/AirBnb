@@ -1,0 +1,59 @@
+﻿@model AirBnb.Entities.Location;
+
+@{
+    var addressId = @Model.id;
+}
+
+<div class="container is-fluid">
+    <div class="columns">
+        <div class="column is-half">
+            <h1 class="title">Enter your rental details!</h1>
+        </div>
+        <div class="column is-half">
+            <figure class="image is-5by3">
+                <img src="https://images.pexels.com/photos/415687/pexels-photo-415687.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" />
+            </figure>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-full">
+            <form method="post" asp-action="CreateRental" asp-controller="Rental">
+                <div class="field">
+                    <label>Title</label>
+                    <input class="input" type="text" name="title" value="" />
+                </div>
+
+                <div class="field">
+                    <label>description</label>
+                    <input class="input" type="text" name="description" value="" />
+                </div>
+
+                <div class="field">
+                    <label>Bedrooms</label>
+                    <input class="input" type="number" name="bedrooms" value="" />
+                </div>
+
+                <div class="field">
+                    <label>bathrooms</label>
+                    <input class="input" type="number" name="bathrooms" value="" />
+                </div>
+
+                <div class="field">
+                    <label>Price per night</label>
+                    <input class="input" min="1.00" max="10000.00" step="1.00" name="rentalFee" value="" />
+                </div>
+
+                <div class="field">
+                    <input name="addressId" value="@addressId" type="hidden" />
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button type="submit">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

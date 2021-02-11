@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@if (Model != null)
+{
+    <div class="container is-fluid">
+        <div class="columns is-multiline" id="rentals">
+            @foreach (var data in Model)
+            {
+                <div class='column is-half' style="padding-bottom: 15px;">
+                    <div class='card' id=@data.id>
+                        <a style="text-decoration : none; color : #000000;" asp-controller="Rental" asp-action="ViewRental" asp-route-id=@data.id>
+                            <div class='card-image'>
+                                <figure class='card-image is-4by3'>
+                                    <img src='https://www.finardproperties.com/sites/default/files/blogpost-1.jpg' alt='placeholder image'>
+                                </figure>
+                            </div>
+                            <div class='card-content'>
+                                <h3>Title: @data.title</h3>
+                                <p>Bedrooms: @data.bedrooms</p>
+                                <p>Bathrooms: @data.bathrooms</p>
+                                <p><strong>Price: @data.rentalFee</strong></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+

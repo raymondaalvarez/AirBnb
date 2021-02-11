@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CloudBnb </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/rental/viewrental.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item image is-48x48" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img id="logo" src="https://i.ibb.co/2jmZ9RW/Heading-4.png" class="image is-48x48">
+                </a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbar" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="navbar-item nav-link text-dark" asp-area="" asp-controller="Location" asp-action="LoadLocationFormPage">Create Rental</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About</a>
+                            <a class="navbar-item text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs">Report An Issue</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signup and login buttons -->
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <partial name="_PartialSignupForm" />
+                            <partial name="_PartialLoginForm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" style="padding-bottom: 6.5rem;">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer" style="padding: 1.5rem .5rem 3rem;">
+        <div class="content has-text-centered"> 
+            <p>
+                <strong>CloudBnB</strong> by <a href="https://jgthms.com">Raymond</a>.
+            </p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Views/viewrental.js"></script>
+    <script src="~/js/Utilities/signup.js"></script>
+    <script src="~/js/Utilities/login.js"></script>
+    <script src="~/js/Utilities/reservationrequest.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

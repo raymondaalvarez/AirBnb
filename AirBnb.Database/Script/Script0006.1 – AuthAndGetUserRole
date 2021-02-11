@@ -1,0 +1,8 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'AuthAndGetUserRole')
+DROP PROCEDURE [dbo].[AuthAndGetUserRole]
+GO
+CREATE PROCEDURE [dbo].[AuthAndGetUserRole]
+    @email VARCHAR(50),
+    @hashpassword VARCHAR(128)
+AS
+    SELECT u.id, u.email, r.userType, u.isActive FROM AirBnbUser u LEFT JOIN AirBnbRole r ON r.id = u.roleId WHERE email = @email and pword = @hashpassword;

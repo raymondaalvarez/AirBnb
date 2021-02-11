@@ -1,0 +1,7 @@
+﻿IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = 'GetLocation')
+DROP PROCEDURE [dbo].[GetLocation]
+GO
+CREATE PROCEDURE [dbo].[GetLocation]
+@locationId UNIQUEIDENTIFIER
+AS
+    SELECT * FROM Location WHERE id = @locationId;
