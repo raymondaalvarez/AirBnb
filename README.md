@@ -1,4 +1,1 @@
-STILL UNDER CONSTRUCTION
-
-Overview
-This Airbnb project helped me understand the layering of different .NET solutions into one. This project seprates into business, business interfaces, repositories, repository interfaces, entities and ties it all together with an API.
+Gain insights into integrating various .NET solutions into a cohesive system. The business logic is organized into distinct layers, including business interfaces, repositories, repository interfaces, entities, and an API.
