@@ -9,7 +9,7 @@
     <ProjectReference Include="..\AirBnb.Business.Repository.Interfaces\AirBnb.Repository.Interfaces.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
     <PackageReference Include="Dapper" Version="2.0.30" />
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
